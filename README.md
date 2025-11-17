@@ -30,17 +30,26 @@ The **CivicPulse ML API** is a lightweight machine learning microservice designe
 ## Project Structure
 
 ```
-
-civicpulse-ml/
-├── app/
-│   ├── api/              # FastAPI routes
-│   ├── core/             # Config & utilities
-│   ├── ml/               # Models, preprocessing, inference
-│   └── main.py           # Application entrypoint
-├── models/               # Trained weights (ignored in Git)
-├── requirements.txt
-└── README.md
-
+CIVICPULSE-ML-DEV/
+├── .git/
+├── .venv/              # local dev environment
+│
+├── models/             # model weights
+│
+├── src/                # source code
+│   └── main.py
+│
+├── tests/              # unit tests folder
+│
+├── .dockerignore       # required for docker builds
+├── .gitignore
+├── .python-version     
+├── Dockerfile          # docker configuration file
+│
+├── LICENSE
+├── pyproject.toml      # uv dependency file
+├── README.md
+└── uv.lock
 ```
 
 ## Getting Started
