@@ -43,7 +43,7 @@ CIVICPULSE-ML-DEV/
 │
 ├── .dockerignore       # required for docker builds
 ├── .gitignore
-├── .python-version     
+├── .python-version
 ├── Dockerfile          # docker configuration file
 │
 ├── LICENSE
@@ -105,7 +105,7 @@ To test the API endpoint, try
 curl -X POST -F "image=@car.jpg" http://localhost:8000/api/ocr/plate
 ```
 
-## 🐳 Running with Docker
+## Running with Docker
 
 Build the image:
 
