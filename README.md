@@ -54,22 +54,69 @@ CIVICPULSE-ML-DEV/
 
 ## Getting Started
 
-### 1. Install dependencies
+## Installation & Setup
+
+This project uses **uv** as the package and environment manager, along with a `pyproject.toml`–based dependency setup.
+
+### **1. Install uv**
+
+If you don’t have `uv` installed:
 
 ```bash
-pip install -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### 2. Run the API locally
+### **2. Create & activate the environment**
 
 ```bash
-uvicorn app.main:app --reload
+uv venv
+source .venv/bin/activate
 ```
 
-### 3. Test OCR endpoint
+### **3. Install dependencies**
+
+```bash
+uv sync
+```
+
+## Running the API
+
+Start the FastAPI server:
+
+```bash
+uv run fastapi dev src/app/main.py
+```
+
+Or manually with uv:
+
+```bash
+uv run python -m src.app.main
+```
+
+The API will be available at:
+
+```
+http://localhost:8000
+```
+
+To test the API endpoint, try
 
 ```bash
 curl -X POST -F "image=@car.jpg" http://localhost:8000/api/ocr/plate
+```
+
+## 🐳 Running with Docker
+
+Build the image:
+
+```bash
+docker build -t civicpulse-ml:dev .
+```
+
+Run the container:
+
+```bash
+docker run -p 8000:8000 civicpulse-ml:dev
 ```
 
 ## Contributing
