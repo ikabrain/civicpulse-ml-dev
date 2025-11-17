@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+tests/
+*.pyc
+models/*.pt
+models/*.onnx
+models/*.h5
