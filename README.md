@@ -34,7 +34,11 @@ CIVICPULSE-ML-DEV/
 ├── .git/
 ├── .venv/              # local dev environment
 │
+├── data/               # sample images for testing
+│
 ├── models/             # model weights
+│
+├── notebooks/          # Jupyter notebooks for experiments
 │
 ├── src/                # source code
 │   └── main.py
