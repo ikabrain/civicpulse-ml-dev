@@ -15,12 +15,14 @@ PYTHON_INTERPRETER = python
 .PHONY: requirements
 requirements:
 	uv sync
+	uv pip install -e .
 
 
 ## Install Jupyter dependencies
 .PHONY: requirements-nb
 requirements-nb:
 	uv sync --extra nb
+	uv pip install -e .
 
 
 

@@ -17,6 +17,7 @@ dependencies = [
     "uvicorn>=0.38.0",
     "pip",
     "python-dotenv",
+    "dotenv>=0.9.9",
 ]
 
 [project.optional-dependencies]
