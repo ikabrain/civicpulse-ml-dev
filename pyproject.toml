@@ -17,8 +17,11 @@ dependencies = [
     "uvicorn>=0.38.0",
     "pip",
     "python-dotenv",
-    "ruff",
 ]
+
+[project.optional-dependencies]
+dev = ["ruff"]
+nb = ["jupyter", "ipykernel", "roboflow"]
 
 [tool.ruff]
 line-length = 99
