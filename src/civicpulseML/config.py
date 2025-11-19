@@ -25,3 +25,7 @@ REPORTS_DIR = BASE_DIR / "reports"
 ROBOFLOW_API_KEY = os.getenv("ROBOFLOW_API_KEY")
 if ROBOFLOW_API_KEY is None:
     raise ValueError("ROBOFLOW_API_KEY not set in .env")
+
+# --- Hardware Config ---
+
+CUDA_AVAILABLE = os.getenv("CUDA_AVAILABLE", "False").lower() in ("true", "1", "t")
