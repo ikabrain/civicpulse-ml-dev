@@ -36,14 +36,27 @@ The **CivicPulse ML API** is a lightweight machine learning microservice designe
 ```
 ├── LICENSE             <- Open-source license if one is chosen
 ├── Makefile            <- Makefile with convenience commands like `make data` or `make train`
+├── README.md           <- The top-level README for developers using this project.
+├── data
+│   ├── external       <- Data from third party sources.
+│   ├── interim        <- Intermediate data that has been transformed.
+│   ├── processed      <- The final, canonical data sets for modeling.
+│   └── raw            <- The original, immutable data dump.
+│
+├── models             <- Trained and serialized models, model predictions, or model summaries
+│
+├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
+│                         the creator's initials, and a short `-` delimited description, e.g.
+│                         `1.0-jqp-initial-data-exploration`.
+│
+├── pyproject.toml     <- Project configuration file with package metadata for 
+│                         civicpulseML and configuration for tools like ruff, black, isort, uv, etc.
+│
+├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
+│   └── figures        <- Generated graphics and figures to be used in reporting
+│
 ├── .git/
 ├── .venv/              # local dev environment
-│
-├── data/               # sample images for testing
-│
-├── models/             # model weights
-│
-├── notebooks/          # Jupyter notebooks for experiments
 │
 ├── src/                # source code
 │   └── main.py
@@ -55,8 +68,6 @@ The **CivicPulse ML API** is a lightweight machine learning microservice designe
 ├── .python-version
 ├── Dockerfile          # docker configuration file
 │
-├── pyproject.toml      # uv dependency file
-├── README.md
 └── uv.lock
 ```
 
