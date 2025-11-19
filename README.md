@@ -102,14 +102,14 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ### **2. Create & activate the environment**
 
 ```bash
-uv venv
+make create_environment
 source .venv/bin/activate
 ```
 
 ### **3. Install dependencies**
 
 ```bash
-uv sync
+make requirements
 ```
 
 ## Running the API
