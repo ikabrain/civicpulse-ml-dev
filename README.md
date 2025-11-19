@@ -157,7 +157,7 @@ docker run -p 8000:8000 civicpulse-ml:dev
 To work with Jupyter notebooks, first ensure you have the development dependencies installed:
 
 ```bash
-uv pip install -e .[dev]
+make requirements-nb
 ```
 
 ## Contributing
