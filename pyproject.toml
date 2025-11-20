@@ -1,6 +1,6 @@
 [project]
 name = "civicpulse-ml-dev"
-version = "0.0.1"
+version = "0.1.0"
 description = "OCR pipeline for automatic identification in CivicPulse"
 authors = [
   { name = "CivicPulse" },
@@ -17,8 +17,15 @@ dependencies = [
     "uvicorn>=0.38.0",
     "pip",
     "python-dotenv",
-    "ruff",
+    "dotenv>=0.9.9",
+    "ultralytics>=8.3.229",
+    "easyocr>=1.7.2",
+    "opencv-python>=4.11.0.86",
 ]
+
+[project.optional-dependencies]
+dev = ["ruff"]
+nb = ["jupyter", "ipykernel", "roboflow"]
 
 [tool.ruff]
 line-length = 99
