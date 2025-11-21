@@ -37,26 +37,26 @@ The **CivicPulse ML API** is a lightweight machine learning microservice designe
 ├── LICENSE             <- Open-source license if one is chosen
 ├── Makefile            <- Makefile with convenience commands like `make data` or `make train`
 ├── README.md           <- The top-level README for developers using this project.
-├── data
+├── data/
 │   ├── external        <- Data from third party sources.
 │   ├── interim         <- Intermediate data that has been transformed.
 │   ├── processed       <- The final, canonical data sets for modeling.
 │   └── raw             <- The original, immutable data dump.
 │
-├── models              <- Trained and serialized models, model predictions, or model summaries
+├── models/              <- Trained and serialized models, model predictions, or model summaries
 │
-├── notebooks           <- Jupyter notebooks. Naming convention is a number (for ordering),
+├── notebooks/           <- Jupyter notebooks. Naming convention is a number (for ordering),
 │                          the creator's initials, and a short `-` delimited description, e.g.
 │                          `1.0-jqp-initial-data-exploration`.
 │
 ├── pyproject.toml      <- Project configuration file with package metadata for
 │                          civicpulseML and configuration for tools like ruff, black, isort, uv, etc.
 │
-├── reports             <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures         <- Generated graphics and figures to be used in reporting
+├── reports/             <- Generated analysis as HTML, PDF, LaTeX, etc.
+│   └── figures/         <- Generated graphics and figures to be used in reporting
 │
 ├── src/                <- Source code for use in this project.
-│   └── civicpulseML
+│   └── civicpulseML/
 │       │
 │       ├── __init__.py             <- Makes civicpulseML a Python module
 │       │
@@ -66,7 +66,7 @@ The **CivicPulse ML API** is a lightweight machine learning microservice designe
 │       │
 │       ├── features.py             <- Code to create features for modeling
 │       │
-│       ├── modeling
+│       ├── modeling/
 │       │   ├── __init__.py
 │       │   ├── predict.py          <- Code to run model inference with trained models
 │       │   └── train.py            <- Code to train models
