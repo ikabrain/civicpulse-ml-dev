@@ -10,19 +10,27 @@ PYTHON_INTERPRETER = python
 # COMMANDS                                                                      #
 #################################################################################
 
+## Installs uv
+.PHONY: uv
+uv:
+	$(PYTHON_INTERPRETER) -m pip install --upgrade pip
+	$(PYTHON_INTERPRETER) -m pip install uv
 
-## Install Python dependencies
+
+
+
+## Installs Python dependencies with uv
 .PHONY: requirements
 requirements:
+	uv build
 	uv sync
-	uv pip install -e .
 
 
 ## Install Jupyter dependencies
 .PHONY: requirements-nb
 requirements-nb:
+	uv build
 	uv sync --extra nb
-	uv pip install -e .
 
 
 
