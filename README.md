@@ -1,8 +1,9 @@
 # CivicPulse ML API
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+![CCDS Badge](https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter)
+[![uv shield](https://img.shields.io/badge/uv-black?logo=uv)](https://docs.astral.sh/uv/)
+![Python Badge](https://img.shields.io/badge/python-3.11%2B-blue?logo=python)
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/CivicPulse-TIET/civicpulse-ml?logo=github)](https://github.com/CivicPulse-TIET/civicpulse-ml/issues)
 
 The **CivicPulse ML API** is a lightweight machine learning microservice designed to process vehicle images and automatically extract license plate numbers using deep learning and OCR. This service powers the verification pipeline of the CivicPulse platform by providing fast, accurate, and API-accessible image analysis.
 
