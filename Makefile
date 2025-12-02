@@ -22,15 +22,15 @@ uv:
 ## Installs Python dependencies with uv
 .PHONY: requirements
 requirements:
+	uv build
 	uv sync
-	uv pip install -e .
 
 
 ## Install Jupyter dependencies
 .PHONY: requirements-nb
 requirements-nb:
+	uv build
 	uv sync --extra nb
-	uv pip install -e .
 
 
 
