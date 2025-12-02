@@ -93,10 +93,10 @@ This project uses **uv** as the package and environment manager, along with a `p
 
 ### **1. Install uv**
 
-If you don’t have `uv` installed:
+If you don’t have `uv` installed, run the following command in project root:
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+make uv
 ```
 
 ### **2. Create & activate the environment**
