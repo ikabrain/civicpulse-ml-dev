@@ -1,10 +1,44 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "civicpulse-ml-dev"
 version = "0.1.0"
-description = "Add your description here"
+description = "OCR pipeline for automatic identification in CivicPulse"
+authors = [
+  { name = "CivicPulse" },
+]
+license = { file = "LICENSE" }
 readme = "README.md"
-requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+requires-python = "~=3.11.0"
 dependencies = [
     "fastapi>=0.121.2",
     "uvicorn>=0.38.0",
+    "pip",
+    "python-dotenv",
+    "dotenv>=0.9.9",
+    "ultralytics>=8.3.229",
+    "easyocr>=1.7.2",
+    "opencv-python>=4.11.0.86",
 ]
+
+[project.optional-dependencies]
+dev = ["ruff"]
+nb = ["jupyter", "ipykernel", "roboflow"]
+
+[tool.ruff]
+line-length = 99
+src = ["civicpulseML"]
+include = ["pyproject.toml", "civicpulseML/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["civicpulseML"]
+force-sort-within-sections = true

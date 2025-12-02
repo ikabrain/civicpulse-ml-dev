@@ -1,5 +1,9 @@
 # CivicPulse ML API
 
+<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
+    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
+</a>
+
 The **CivicPulse ML API** is a lightweight machine learning microservice designed to process vehicle images and automatically extract license plate numbers using deep learning and OCR. This service powers the verification pipeline of the CivicPulse platform by providing fast, accurate, and API-accessible image analysis.
 
 ## Features
@@ -27,49 +31,133 @@ The **CivicPulse ML API** is a lightweight machine learning microservice designe
 | POST   | `/api/ocr/plate` | Detects license plate and extracts text |
 | GET    | `/health`        | Service health check                    |
 
-## Project Structure
+## Project Organisation
 
 ```
-CIVICPULSE-ML-DEV/
-├── .git/
-├── .venv/              # local dev environment
+├── LICENSE             <- Open-source license if one is chosen
+├── Makefile            <- Makefile with convenience commands like `make data` or `make train`
+├── README.md           <- The top-level README for developers using this project.
+├── data
+│   ├── external        <- Data from third party sources.
+│   ├── interim         <- Intermediate data that has been transformed.
+│   ├── processed       <- The final, canonical data sets for modeling.
+│   └── raw             <- The original, immutable data dump.
 │
-├── models/             # model weights
+├── models              <- Trained and serialized models, model predictions, or model summaries
 │
-├── src/                # source code
-│   └── main.py
+├── notebooks           <- Jupyter notebooks. Naming convention is a number (for ordering),
+│                          the creator's initials, and a short `-` delimited description, e.g.
+│                          `1.0-jqp-initial-data-exploration`.
 │
-├── tests/              # unit tests folder
+├── pyproject.toml      <- Project configuration file with package metadata for
+│                          civicpulseML and configuration for tools like ruff, black, isort, uv, etc.
 │
-├── .dockerignore       # required for docker builds
-├── .gitignore
-├── .python-version     
-├── Dockerfile          # docker configuration file
+├── reports             <- Generated analysis as HTML, PDF, LaTeX, etc.
+│   └── figures         <- Generated graphics and figures to be used in reporting
 │
-├── LICENSE
-├── pyproject.toml      # uv dependency file
-├── README.md
-└── uv.lock
+├── src/                <- Source code for use in this project.
+│   └── civicpulseML
+│       │
+│       ├── __init__.py             <- Makes civicpulseML a Python module
+│       │
+│       ├── config.py               <- Store useful variables and configuration
+│       │
+│       ├── dataset.py              <- Scripts to download or generate data
+│       │
+│       ├── features.py             <- Code to create features for modeling
+│       │
+│       ├── modeling
+│       │   ├── __init__.py
+│       │   ├── predict.py          <- Code to run model inference with trained models
+│       │   └── train.py            <- Code to train models
+│       │
+│       └── plots.py                <- Code to create visualizations
+│
+├── tests/              <- Unit tests and other test code
+│
+├── .dockerignore       <- Required for docker builds
+├── Dockerfile          <- Docker configuration file
+│
+├── .gitignore          <- Git ignore file
+│
+├── .python-version     <- Python version file
+│
+└── uv.lock             <- uv lock file for dependency management
 ```
 
 ## Getting Started
 
-### 1. Install dependencies
+## Installation & Setup
+
+This project uses **uv** as the package and environment manager, along with a `pyproject.toml`–based dependency setup.
+
+### **1. Install uv**
+
+If you don’t have `uv` installed, run the following command in project root:
 
 ```bash
-pip install -r requirements.txt
+make uv
 ```
 
-### 2. Run the API locally
+### **2. Create & activate the environment**
 
 ```bash
-uvicorn app.main:app --reload
+make create_environment
+source .venv/bin/activate
 ```
 
-### 3. Test OCR endpoint
+### **3. Install dependencies**
+
+```bash
+make requirements
+```
+
+## Running the API
+
+Start the FastAPI server:
+
+```bash
+uv run fastapi dev src/app/main.py
+```
+
+Or manually with uv:
+
+```bash
+uv run python -m src.app.main
+```
+
+The API will be available at:
+
+```
+http://localhost:8000
+```
+
+To test the API endpoint, try
 
 ```bash
 curl -X POST -F "image=@car.jpg" http://localhost:8000/api/ocr/plate
+```
+
+## Running with Docker
+
+Build the image:
+
+```bash
+docker build -t civicpulse-ml:dev .
+```
+
+Run the container:
+
+```bash
+docker run -p 8000:8000 civicpulse-ml:dev
+```
+
+## Experimenting with notebooks
+
+To work with Jupyter notebooks, first ensure you have the development dependencies installed:
+
+```bash
+make requirements-nb
 ```
 
 ## Contributing
