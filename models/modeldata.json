@@ -4,6 +4,6 @@
     "last_weights_path": "models/yolov8n-roboflow-license-plates/yolov8n_roboflow_license_plates_last.pt",
     "model_name": "yolov8n",
     "dataset": "roboflow-license-plates",
-    "trained_at": "2025-11-22T03:08:49.540784"
+    "trained_at": "2025-12-02T07:15:06.864021"
   }
 }
