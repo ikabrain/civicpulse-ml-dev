@@ -154,11 +154,13 @@ docker run -p 8000:8000 civicpulse-ml:dev
 
 ## Experimenting with notebooks
 
-To work with Jupyter notebooks, first ensure you have the development dependencies installed:
+To work with Jupyter notebooks, first ensure you have enabled the development dependencies:
 
 ```bash
-make requirements-nb
+make requirements-dev
 ```
+
+This repository contains all its experimental notebooks used to produce models within [`notebooks/`](#project-organisation)
 
 ## Contributing
 
