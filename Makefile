@@ -23,14 +23,14 @@ uv:
 .PHONY: requirements
 requirements:
 	uv build
-	uv sync
+	uv sync --no-dev
 
 
-## Install Jupyter dependencies
-.PHONY: requirements-nb
-requirements-nb:
+## Install dev dependencies
+.PHONY: requirements-dev
+requirements-dev:
 	uv build
-	uv sync --extra nb
+	uv sync --dev
 
 
 
@@ -53,6 +53,7 @@ lint:
 format:
 	ruff check --fix
 	ruff format
+	black .
 
 
 

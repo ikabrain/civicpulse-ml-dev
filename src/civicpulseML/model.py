@@ -38,7 +38,9 @@ def _get_yolo_weights_path() -> Path:
 
     # Fallback: discover weights using naming convention
     expected_weights = (
-        MODELS_DIR / "yolov8n-roboflow-license-plates" / "yolov8n_roboflow_license_plates_best.pt"
+        MODELS_DIR
+        / "yolov8n-roboflow-license-plates"
+        / "yolov8n_roboflow_license_plates_best.pt"
     )
     if expected_weights.exists():
         return expected_weights
