@@ -1,3 +1,5 @@
+> ⚠️ **NOTE: Repository archived as taking an indefinite break from this project.** However, if you found interest, feel free to contribute to our org at [CivicPulseTIET/civicpulse-ml](https://github.com/CivicPulse-TIET/civicpulse-ml/)
+
 # CivicPulse ML API
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
